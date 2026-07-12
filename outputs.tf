@@ -1,3 +1,7 @@
+output "advanced_threat_protections_id" {
+  description = "Map of id values across all advanced_threat_protections, keyed the same as var.advanced_threat_protections"
+  value       = { for k, v in azurerm_advanced_threat_protection.advanced_threat_protections : k => v.id }
+}
 output "advanced_threat_protections_enabled" {
   description = "Map of enabled values across all advanced_threat_protections, keyed the same as var.advanced_threat_protections"
   value       = { for k, v in azurerm_advanced_threat_protection.advanced_threat_protections : k => v.enabled }
